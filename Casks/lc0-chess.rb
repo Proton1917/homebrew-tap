@@ -1,6 +1,6 @@
 cask "lc0-chess" do
   version "0.1.0"
-  sha256 "ac5d84281b92a03aeb2ed5ed65dbf371a09eab49da4868f642cfd5d9726fcbc6"
+  sha256 "f785601d48525da9649443f1923a468442c7a6ea1e217f9a8f3561b150d44ba6"
 
   url "https://github.com/Proton1917/lc0-macos-app/releases/download/v#{version}/Lc0Chess-v#{version}.zip",
       verified: "github.com/Proton1917/lc0-macos-app/"
