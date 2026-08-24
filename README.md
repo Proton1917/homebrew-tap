@@ -8,6 +8,8 @@ Install the OpenRouter-powered speech transcription and OCR CLI:
 brew install Proton1917/tap/spt
 ```
 
+Apple Silicon macOS Tahoe uses a prebuilt bottle, so installation does not require a local Rust/LLVM toolchain. FFmpeg remains a runtime dependency because `spt` uses it for media validation, decoding and exact audio slicing. Platforms without a matching bottle fall back to a locked source build.
+
 Upgrade:
 
 ```bash
