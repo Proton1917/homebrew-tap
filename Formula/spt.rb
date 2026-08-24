@@ -18,6 +18,16 @@ class Spt < Formula
     system "cargo", "install", *std_cargo_args
   end
 
+  def caveats
+    <<~EOS
+      Before transcription or OCR, set your OpenRouter API key in the shell environment:
+        export OPENROUTER_API_KEY="your-key"
+
+      spt reads the key only at runtime and never writes it to its configuration file.
+      Run `spt --help` to get started.
+    EOS
+  end
+
   test do
     ENV.delete "OPENROUTER_API_KEY"
     ENV["SPT_CONFIG_PATH"] = (testpath/"config.toml").to_s
