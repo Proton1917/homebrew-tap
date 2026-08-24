@@ -5,6 +5,11 @@ class Spt < Formula
   sha256 "76794ed7d7ae60664366796c237b63293fdb1a389bfb562c81c35e3aa955fd32"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/Proton1917/speech-to-text/releases/download/v0.5.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "51ee1c3cf95caf3406b59e59781cfcd88eef17e5b9fb197c5b8ea4fe546f9205"
+  end
+
   depends_on "rust" => :build
   depends_on "ffmpeg"
 
