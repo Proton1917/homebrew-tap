@@ -1,14 +1,9 @@
 class Spt < Formula
   desc "Safe OpenRouter-powered speech transcription and OCR CLI"
   homepage "https://github.com/Proton1917/speech-to-text"
-  url "https://github.com/Proton1917/speech-to-text/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "76794ed7d7ae60664366796c237b63293fdb1a389bfb562c81c35e3aa955fd32"
+  url "https://github.com/Proton1917/speech-to-text/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "26c519c1f5d59a0a1ce8b0080a7c014f09a660b0b47998963fe2a8ee23433bc5"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/Proton1917/speech-to-text/releases/download/v0.5.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "51ee1c3cf95caf3406b59e59781cfcd88eef17e5b9fb197c5b8ea4fe546f9205"
-  end
 
   depends_on "rust" => :build
   depends_on "ffmpeg"
@@ -54,13 +49,13 @@ class Spt < Formula
 
     output = shell_output("#{bin}/spt config")
     assert_match "schema_version=4", output
-    assert_match "model=google/gemini-3.7-flash", output
-    assert_match "quality_review_model=google/gemini-3.7-flash", output
+    assert_match "model=google/gemini-3.8-flash", output
+    assert_match "quality_review_model=google/gemini-3.8-flash", output
     assert_match "asr_model=qwen/qwen3-asr-1.7b", output
-    assert_match "quality_asr_model=fish-audio/transcribe-1", output
+    assert_match "quality_asr_model=microsoft/mai-transcribe-2", output
     assert_match "provider=google-vertex/global", output
     assert_match "asr_provider=deepinfra", output
-    assert_match "quality_asr_provider=fish-audio", output
+    assert_match "quality_asr_provider=azure", output
     assert_match "OPENROUTER_API_KEY=未设置", output
     assert_path_exists testpath/"config.toml"
   end
