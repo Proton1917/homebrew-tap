@@ -1,6 +1,6 @@
 cask "router" do
-  version "0.4.0"
-  sha256 "18e6b9c0c46bf054501a8ea951546ffd4592b6a0c55aba9c84cae9ff64eb5c9c"
+  version "0.5.0"
+  sha256 "e8d2638cf619da06da483d1b836b558d44c1b31da44d65907611fb0f44c0a2c1"
 
   url "https://github.com/Proton1917/Router/releases/download/v#{version}/Router_#{version}_aarch64.dmg"
   name "Router"
